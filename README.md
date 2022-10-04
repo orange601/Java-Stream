@@ -20,6 +20,36 @@ Stream 소개 (with. java 8)
 (대부분은 Stateless지만 distinct나 sorted 처럼 이전 이전 소스 데이터를 참조해야 하는 오퍼레이션은 Stateful 오퍼레이션이다.)
 - filter, map, limit, skip, sorted, ...
 
+````java
+List<String> names = new ArrayList<>();
+names.add("a");
+names.add("b");
+names.add("c");
+
+
+names.stream().map((s) -> {
+	System.out.println(s); // <- 중개형 오퍼레이션이기 때문에 실행되지 않음
+	return s.toUpperCase();
+});
+
+System.out.println("test");
+````
+
 ## 종료 오퍼레이션 ##
 - Stream을 리턴하지 않는다.
 - collect, allMatch, count, forEach, min, max, ...
+
+````java
+List<String> names = new ArrayList<>();
+names.add("a");
+names.add("b");
+names.add("c");
+
+
+names.stream().map((s) -> {
+	System.out.println(s);  // 종료형 오퍼레이션 이기때문에 실행됨
+	return s.toUpperCase();
+}).collect(Collectors.toList()); // <- 종료형 오퍼레이션
+
+names.forEach(System.out::println);
+````

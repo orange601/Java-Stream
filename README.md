@@ -1,5 +1,5 @@
 # Stream
-Stream 소개 (with. java 8)
+Stream 소개 (with. java 8) [인프런 백기선 java 8](https://www.inflearn.com/course/the-java-java8)
 
 ## Stream 이란? ##
 1. sequence of elements supporting sequential and parallel aggregate operations

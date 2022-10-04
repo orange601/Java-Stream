@@ -10,7 +10,7 @@ Stream 소개 (with. java 8)
 6. 중개 오퍼레이션은 근본적으로 lazy 하다.
 7. 손쉽게 병렬 처리할 수 있다.
 ````java
-// 병렬처리가 무조건 속도가 빠른게 아니다.  // 데이터가 방대하게 큰 경우에 사용 아니면 stream 사용
+// 병렬처리가 무조건 속도가 빠른게 아니다.  // 데이터가 방대하게 큰 경우에 사용, 아니면 stream 사용
 List<String> collect = names.parallelStream().map((s) -> {
 	System.out.println(s);
 	return s.toUpperCase();

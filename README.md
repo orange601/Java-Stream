@@ -29,8 +29,10 @@ names.add("c");
 
 names.stream().map((s) -> {
 	System.out.println(s); // <- 중개형 오퍼레이션이기 때문에 실행되지 않음
-	return s.toUpperCase();
+	return s.toUpperCase(); 
 });
+
+// 결론: 중개 오퍼레이션은 근본적으로 lazy 하다. ( 물론 다른뜻도 있긴함 )
 
 System.out.println("test");
 ````

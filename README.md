@@ -9,6 +9,13 @@ Stream 소개 (with. java 8)
 - 무제한일 수도 있다. (Short Circuit 메소드를 사용해서 제한할 수 있다.)
 - 중개 오퍼레이션은 근본적으로 lazy 하다.
 - 손쉽게 병렬 처리할 수 있다.
+````java
+// 병렬처리가 무조건 속도가 빠른게 아니다.  // 데이터가 방대하게 큰 경우에 사용 아니면 stream 사용
+List<String> collect = names.parallelStream().map((s) -> {
+	System.out.println(s);
+	return s.toUpperCase();
+}).collect(Collectors.toList());
+````
 
 ## 스트림 파이프라인 ##
 - 0 또는 다수의 중개 오퍼레이션 (intermediate operation)과 한개의 종료 오퍼레이션 (terminal operation)으로 구성한다.

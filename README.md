@@ -2,13 +2,13 @@
 Stream 소개 (with. java 8)
 
 ## Stream 이란? ##
-- sequence of elements supporting sequential and parallel aggregate operations
-- 데이터를 담고 있는 저장소 (컬렉션)이 아니다.
-- - Funtional in nature, 스트림이 처리하는 데이터 소스를 변경하지 않는다.
-- 스트림으로 처리하는 데이터는 오직 한번만 처리한다.
-- 무제한일 수도 있다. (Short Circuit 메소드를 사용해서 제한할 수 있다.)
-- 중개 오퍼레이션은 근본적으로 lazy 하다.
-- 손쉽게 병렬 처리할 수 있다.
+1. sequence of elements supporting sequential and parallel aggregate operations
+2. 데이터를 담고 있는 저장소 (컬렉션)이 아니다.
+3. Funtional in nature, 스트림이 처리하는 데이터 소스를 변경하지 않는다.
+4. 스트림으로 처리하는 데이터는 오직 한번만 처리한다.
+5. 무제한일 수도 있다. (Short Circuit 메소드를 사용해서 제한할 수 있다.)
+6. 중개 오퍼레이션은 근본적으로 lazy 하다.
+7. 손쉽게 병렬 처리할 수 있다.
 ````java
 // 병렬처리가 무조건 속도가 빠른게 아니다.  // 데이터가 방대하게 큰 경우에 사용 아니면 stream 사용
 List<String> collect = names.parallelStream().map((s) -> {

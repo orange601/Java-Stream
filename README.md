@@ -177,6 +177,7 @@ public class Application {
 
 ## Spliterator ##
 - Iterator 처럼 Spliterator는 소스의 요소 탐색 기능을 제공 But, Spliterator는 병렬 작업에 특화되어 있다.
+- Stream에서 사용된다.
 
 ### 메서드 ###
 - tryAdvance : 요소를 하나씩 소비하면서 탐색해야 할 요소가 남아있으면 true 반환

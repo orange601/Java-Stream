@@ -174,3 +174,22 @@ public class Application {
 	
 }
 ````
+
+## Spliterator ##
+- Iterator 처럼 Spliterator는 소스의 요소 탐색 기능을 제공 But, Spliterator는 병렬 작업에 특화되어 있다.
+
+````java
+List<String> list = new ArrayList<>();
+list.add("test1");
+list.add("test2");
+list.add("test3");
+list.add("test4");
+list.add("test5");
+list.add("test6");		
+
+Spliterator<String> spliterators = list.spliterator();
+Spliterator<String> spliterators2 = spliterators.trySplit();
+while(spliterators.tryAdvance(System.out::println));
+System.out.println("======================");
+while(spliterators2.tryAdvance(System.out::println));
+````

@@ -179,11 +179,11 @@ public class Application {
 - Iterator 처럼 Spliterator는 소스의 요소 탐색 기능을 제공 But, Spliterator는 병렬 작업에 특화되어 있다.
 
 ### 메서드 ###
-tryAdvance : 요소를 하나씩 소비하면서 탐색해야 할 요소가 남아있으면 true 반환
-trySplit : 일부 요소를 분할해서 두 번째 Spliterator를 생성
-estimateSize : 탐색해야 할 요소의 수 제공
-characteristics : Spliterator 객체에 포함된 모든 특성값의 합을 반환
-각 특성은 어떤 Spliterator 객체인가에 따라 다르며 그에 따른 각 메서드들의 내부적인 동작이 다를 수 있다.
+- tryAdvance : 요소를 하나씩 소비하면서 탐색해야 할 요소가 남아있으면 true 반환
+- trySplit : 일부 요소를 분할해서 두 번째 Spliterator를 생성
+- estimateSize : 탐색해야 할 요소의 수 제공
+- characteristics : Spliterator 객체에 포함된 모든 특성값의 합을 반환
+- 각 특성은 어떤 Spliterator 객체인가에 따라 다르며 그에 따른 각 메서드들의 내부적인 동작이 다를 수 있다.
 	
 ````java
 List<String> list = new ArrayList<>();

@@ -195,9 +195,26 @@ list.add("test4");
 list.add("test5");
 list.add("test6");		
 
-Spliterator<String> spliterators = list.spliterator();
-Spliterator<String> spliterators2 = spliterators.trySplit();
-while(spliterators.tryAdvance(System.out::println));
+Spliterator<String> alist = list.spliterator();
+alist.forEachRemaining((p) -> {
+	System.out.println(p);
+});
+
 System.out.println("======================");
+
+Spliterator<String> blist = list.spliterator();
+Spliterator<String> spliterators2 = blist.trySplit();
 while(spliterators2.tryAdvance(System.out::println));
+
+// 결과
+// test1
+// test2
+// test3
+// test4
+// test5
+// test6
+// ======================
+// test1
+// test2
+// test3
 ````

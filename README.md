@@ -234,8 +234,7 @@ public static void main(String args[]) {
 }
 
 // 기본 타입_2
-// Java 1.8+ 이상인 경우 java.util.stream
-// java.util.stream 패키지에서 제공하는 클래스를 사용하여 기본 타입의 배열을 스트림으로 변환할 수 있다.
+// Java 1.8+ 이상인 경우 기본 타입의 배열을 스트림으로 변환할 수 있다.
 public static void main(String args[]) {
   int[] intArray = {0, 10, 20, 30, 40};
   IntStream intStream = Arrays.stream(intArray);

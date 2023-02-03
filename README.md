@@ -218,3 +218,26 @@ while(spliterators2.tryAdvance(System.out::println));
 // test2
 // test3
 ````
+
+## Arrays.stream VS Stream.of ##
+````java
+// 래퍼런스타입
+public static void main(String args[]) {
+  String[] strArray = {"One", "Two", "Three"};
+  Stream<String> strStream = Arrays.stream(strArray);
+}
+
+// 기본 타입_1
+public static void main(String args[]) {
+  Integer[] intArray = {0, 10, 20, 30, 40};
+  Stream<Integer> intStream = Arrays.stream(intArray);
+}
+
+// 기본 타입_2
+// Java 1.8+ 이상인 경우 java.util.stream
+// java.util.stream 패키지에서 제공하는 클래스를 사용하여 기본 타입의 배열을 스트림으로 변환할 수 있다.
+public static void main(String args[]) {
+  int[] intArray = {0, 10, 20, 30, 40};
+  IntStream intStream = Arrays.stream(intArray);
+}
+````

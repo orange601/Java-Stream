@@ -220,23 +220,38 @@ while(spliterators2.tryAdvance(System.out::println));
 ````
 
 ## Arrays.stream VS Stream.of ##
+
+### Arrays.stream ###
 ````java
 // 래퍼런스타입
-public static void main(String args[]) {
-  String[] strArray = {"One", "Two", "Three"};
-  Stream<String> strStream = Arrays.stream(strArray);
-}
+String[] strArray = {"A", "B", "C"};
+Stream<String> strStream = Arrays.stream(strArray);
+
 
 // 기본 타입_1
-public static void main(String args[]) {
-  Integer[] intArray = {0, 10, 20, 30, 40};
-  Stream<Integer> intStream = Arrays.stream(intArray);
-}
+Integer[] intArray = {1, 2, 3, 4, 5};
+Stream<Integer> intStream = Arrays.stream(intArray);
+
 
 // 기본 타입_2
 // Java 1.8+ 이상인 경우 기본 타입의 배열을 스트림으로 변환할 수 있다.
-public static void main(String args[]) {
-  int[] intArray = {0, 10, 20, 30, 40};
-  IntStream intStream = Arrays.stream(intArray);
-}
+Integer[] intArray = {1, 2, 3, 4, 5};
+IntStream intStream = Arrays.stream(intArray);
+````
+	
+### Stream.of ###
+````java
+// 참조타입
+String[] strArray = {"A", "B", "C"};
+Stream<String> strStream = Stream.of(strArray);
+
+// 기본타입_1
+int[] intArray = {1, 2, 3, 4, 5};
+IntStream intStream = IntStream.of(intArray);
+intStream.forEach(System.out::print); // 결과: [I@2f410acf  // 주소값
+
+// 기본타입_2
+int[] intArray = {1, 2, 3, 4, 5};
+IntStream intStream = IntStream.of(intArray); // IntStream을 이용
+intStream.forEach(System.out::print); // 결과: 12345
 ````

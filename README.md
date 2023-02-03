@@ -247,7 +247,7 @@ Stream<String> strStream = Stream.of(strArray);
 
 // 기본타입_1
 int[] intArray = {1, 2, 3, 4, 5};
-IntStream intStream = IntStream.of(intArray);
+Stream<int[]> intStream = Stream.of(intArray);
 intStream.forEach(System.out::print); // 결과: [I@2f410acf  // 주소값
 
 // 기본타입_2

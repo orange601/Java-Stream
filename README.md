@@ -255,3 +255,11 @@ int[] intArray = {1, 2, 3, 4, 5};
 IntStream intStream = IntStream.of(intArray); // IntStream을 이용
 intStream.forEach(System.out::print); // 결과: 12345
 ````
+
+## Enum filter ##
+````java
+Arrays.stream(EnumClass.values())
+	.filter(c -> c.getSymbol().equals(name))
+	.findAny()
+	.orElseThrow(() -> new Exception());
+````

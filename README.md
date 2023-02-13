@@ -96,6 +96,22 @@ names.forEach(System.out::println);
 	- reduce(identity, BiFunction), collect(), sum(), max()
 	- 예) 모든 숫자 합 구하기
 	- 예) 모든 데이터를 하나의 List 또는 Set에 옮겨 담기
+	
+8. PEEK
+	- 스트림에는 중간 연산의 수행 결과를 디버깅할 수 있는 수단인 peek 메서드를 제공한다.
+	- peek은 stream 을 return 하기때문에 최종 연산으로 사용 불가능하다.
+	
+	:-1: BAD
+	
+	````java
+	// peek() 메소드를 최종 연산으로 사용하면 동작하지 않는다.
+	public static void main(String[] args) {
+	  Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+	  stream.filter(s -> s % 3 == 0)
+	      .peek(s -> System.out.println("원본 스트림 : " + s));
+	}
+	````
+
 
 ## 예제 ##
 ````java

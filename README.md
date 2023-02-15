@@ -100,6 +100,7 @@ names.forEach(System.out::println);
 8. PEEK
 	- 스트림에는 중간 연산의 수행 결과를 디버깅할 수 있는 수단인 peek 메서드를 제공한다.
 	- peek은 stream 을 return 하기때문에 최종 연산으로 사용 불가능하다.
+	- peek메서드와 forEach 메서드를 혼동해서는 안된다. peek은 중간연산, forEach는 최종연산
 	
 	:-1: BAD
 	

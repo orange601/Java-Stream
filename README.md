@@ -21,11 +21,11 @@ List<String> collect = names.parallelStream().map((s) -> {
 - 0 또는 다수의 중개 오퍼레이션 (intermediate operation)과 한개의 종료 오퍼레이션 (terminal operation)으로 구성한다.
 - 스트림의 데이터 소스는 오직 터미널 오퍼네이션을 실행할 때에만 처리한다.
 
-## 중개 오퍼레이션 ##
+## 중개 오퍼레이션 (중간연산) ##
 - Stream을 리턴한다.
 - Stateless / Stateful 오퍼레이션으로 더 상세하게 구분할 수도 있다.    
 (대부분은 Stateless지만 distinct나 sorted 처럼 이전 이전 소스 데이터를 참조해야 하는 오퍼레이션은 Stateful 오퍼레이션이다.)
-- filter, map, limit, skip, sorted, ...
+- filter, map, limit, skip, sorted, peek
 
 ````java
 List<String> names = new ArrayList<>();
@@ -44,7 +44,7 @@ names.stream().map((s) -> {
 System.out.println("test");
 ````
 
-## 종료 오퍼레이션 ##
+## 종료 오퍼레이션 (최종연산) ##
 - Stream을 리턴하지 않는다.
 - collect, allMatch, count, forEach, min, max, ...
 

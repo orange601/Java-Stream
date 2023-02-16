@@ -64,9 +64,11 @@ names.forEach(System.out::println);
 ````
 
 ## Stream API ##
-1. 걸러내기
-	- Filter(Predicate)
-	- 예) 이름이 3글자 이상인 데이터만 새로운 스트림으로 
+
+1. filter
+	````java
+		Stream<T> filter(Predicate<? super T> predicate)
+	````
 
 2. 변경하기
 	- Map(Function) 또는 FlatMap(Function)

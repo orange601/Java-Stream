@@ -65,7 +65,7 @@ names.forEach(System.out::println);
 
 ## Stream API ##
 
-### 1. Filter ###
+**1. Filter**
 	- 중개 오퍼레이션 (중간연산)
 	- Stream<T> filter(Predicate<? super T> predicate)
 

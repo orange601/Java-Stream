@@ -65,35 +65,35 @@ names.forEach(System.out::println);
 
 ## Stream API ##
 
-**1. Filter**
-	- 중개 오퍼레이션 (중간연산)
-	- Stream<T> filter(Predicate<? super T> predicate)
+#### 1. Filter ####
+- 중개 오퍼레이션 (중간연산)
+- Stream<T> filter(Predicate<? super T> predicate)
 
-	````java
-	// 예제
-	List<Integer> names = new ArrayList<>();
-	names.add(1);
-	names.add(2);
-	names.add(3);
-	names.add(4);
+````java
+// 예제
+List<Integer> names = new ArrayList<>();
+names.add(1);
+names.add(2);
+names.add(3);
+names.add(4);
 
-	names.stream()
-		 .filter(n -> n > 2)
-		 .forEach(System.out::println);
-	````
+names.stream()
+	 .filter(n -> n > 2)
+	 .forEach(System.out::println);
+````
 
-	````java
-	// 혹은 특정 객체의 인스턴스 참조를 통한 filter
-	names.stream()
-		.filter(NumberUtil::isGreaterThanTwo)
-		.forEach(System.out::println);
-	
-	public class NumberUtil {
-		static boolean isGreaterThanTwo(int num) {
-			return num > 2;
-		}
+````java
+// 혹은 특정 객체의 인스턴스 참조를 통한 filter
+names.stream()
+	.filter(NumberUtil::isGreaterThanTwo)
+	.forEach(System.out::println);
+
+public class NumberUtil {
+	static boolean isGreaterThanTwo(int num) {
+		return num > 2;
 	}
-	````
+}
+````
 
 2. 변경하기
 	- Map(Function) 또는 FlatMap(Function)

@@ -85,7 +85,7 @@ names.stream()
 ````java
 // 혹은 특정 객체의 인스턴스 참조를 통한 filter
 names.stream()
-	.filter(NumberUtil::isGreaterThanTwo)
+	.filter(NumberUtil::isGreaterThanTwo) // 메소드 레퍼런스
 	.forEach(System.out::println);
 
 public class NumberUtil {
@@ -94,6 +94,8 @@ public class NumberUtil {
 	}
 }
 ````
+
+[메소드레퍼런스참조](https://github.com/orange601/Java-Lambda/blob/main/README.md#6-%EB%A9%94%EC%86%8C%EB%93%9C-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4)
 
 2. 변경하기
 	- Map(Function) 또는 FlatMap(Function)

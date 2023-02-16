@@ -97,7 +97,7 @@ names.forEach(System.out::println);
 	- 예) 모든 숫자 합 구하기
 	- 예) 모든 데이터를 하나의 List 또는 Set에 옮겨 담기
 	
-8. PEEK
+8. Peek
 	- 스트림에는 중간 연산의 수행 결과를 디버깅할 수 있는 수단인 peek 메서드를 제공한다.
 	- peek은 stream 을 return 하기때문에 최종 연산으로 사용 불가능하다.
 	- peek메서드와 forEach 메서드를 혼동해서는 안된다. peek은 중간연산, forEach는 최종연산

@@ -65,7 +65,7 @@ names.forEach(System.out::println);
 
 ## Stream API ##
 
-#### 1. Filter ####
+### 1. Filter ###
 - 중개 오퍼레이션 (중간연산)
 - Stream<T> filter(Predicate<? super T> predicate)
 
@@ -102,10 +102,17 @@ public class NumberUtil {
 	- 예) 각각의 Post 인스턴스에서 String title만 새로운 스트림으로
 	- 예) List<Stream<String>>을 String의 스트림으로
 
-3. 생성하기
-	- generate(Supplier) 또는 Iterate(T seed, UnaryOperator) 
-	- 예) 10부터 1씩 증가하는 무제한 숫자 스트림
-	- 예) 랜덤 int 무제한 스트림
+### 3. generate ###
+- 중개 오퍼레이션
+- static <T> Stream<T> generate(Supplier<T> s)
+- 람다식을 매개변수로 받아서, 이 람다식에 의해 계산되는 값들을 요소로 하는 무한 스트림을 생성한다.
+- generate()에 의해 생성된 스트림은 기본형 스트림 타입의 참조변수로 다룰 수 없다.
+- iterate()와 비슷하나 이전 결과를 이용해 다음 요소를 계산하지 않음.
+
+````java
+Stream<String> stream = Stream.generate(() -> "Echo").limit(5); // limit 설정이 없으면 무한으로 생성됨
+stream.forEach(System.out::println);
+````
 
 4. 제한하기
 	- limit(long) 또는 skip(long)

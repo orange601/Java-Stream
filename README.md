@@ -124,9 +124,13 @@ stream.forEach(System.out::println);
 	- 예) k로 시작하는 문자열이 있는지 확인한다. (true 또는 false를 리턴한다.)
 	- 예) 스트림에 있는 모든 값이 10보다 작은지 확인한다.
 
-6. 개수 세기
-	- count()
-	- 예) 10보다 큰 수의 개수를 센다.
+
+### 6. count ###
+
+````java
+List<String> words = Arrays.asList("aop", "ioc", "okay", "true", "false");
+int count = (int) words.stream().filter(w->w.contains("o")).count();
+````
 
 7. 스트림을 데이터 하나로 뭉치기
 	- reduce(identity, BiFunction), collect(), sum(), max()

@@ -126,6 +126,7 @@ stream.forEach(System.out::println);
 
 
 ### 6. count ###
+- 종료 오퍼레이션(최종연산)
 
 ````java
 List<String> words = Arrays.asList("aop", "ioc", "okay", "true", "false");
@@ -137,21 +138,21 @@ int count = (int) words.stream().filter(w->w.contains("o")).count();
 	- 예) 모든 숫자 합 구하기
 	- 예) 모든 데이터를 하나의 List 또는 Set에 옮겨 담기
 	
-8. Peek
-	- 스트림에는 중간 연산의 수행 결과를 디버깅할 수 있는 수단인 peek 메서드를 제공한다.
-	- peek은 stream 을 return 하기때문에 최종 연산으로 사용 불가능하다.
-	- peek메서드와 forEach 메서드를 혼동해서는 안된다. peek은 중간연산, forEach는 최종연산
+### 8. Peek ###
+- 스트림에는 중간 연산의 수행 결과를 디버깅할 수 있는 수단인 peek 메서드를 제공한다.
+- peek은 stream 을 return 하기때문에 최종 연산으로 사용 불가능하다.
+- peek메서드와 forEach 메서드를 혼동해서는 안된다. peek은 중간연산, forEach는 최종연산
 	
-	:-1: BAD
+:-1: BAD
 	
-	````java
-	// peek() 메소드를 최종 연산으로 사용하면 동작하지 않는다.
-	public static void main(String[] args) {
-	  Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-	  stream.filter(s -> s % 3 == 0)
+````java
+// peek() 메소드를 최종 연산으로 사용하면 동작하지 않는다.
+public static void main(String[] args) {
+	Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+	stream.filter(s -> s % 3 == 0)
 	      .peek(s -> System.out.println("원본 스트림 : " + s));
-	}
-	````
+}
+````
 
 
 ## 예제 ##

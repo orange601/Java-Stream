@@ -130,11 +130,18 @@ stream2.forEach(System.out::println);
 - Stream.skip(number)에서 인자로 전달된 숫자만큼 요소를 건너띄고, 그 이후의 요소들로만 스트림을 생성. Stream의 초기 데이터를 무시할 때 사용할 수 있다.
 
 ````java
-List<String> list =
-        Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10" );
+List<String> list = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10" );
 Stream<String> stream3 = list.stream();
 Stream<String> stream4 = stream3.skip(5);
 stream4.forEach(System.out::println);
+````
+````
+// output
+6
+7
+8
+9
+10
 ````
 
 6. 스트림에 있는 데이터가 특정 조건을 만족하는지 확인

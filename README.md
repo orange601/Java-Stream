@@ -97,10 +97,11 @@ public class NumberUtil {
 
 [메소드레퍼런스참조](https://github.com/orange601/Java-Lambda/blob/main/README.md#6-%EB%A9%94%EC%86%8C%EB%93%9C-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4)
 
-2. 변경하기
-	- Map(Function) 또는 FlatMap(Function)
-	- 예) 각각의 Post 인스턴스에서 String title만 새로운 스트림으로
-	- 예) List<Stream<String>>을 String의 스트림으로
+### 2. Map ###
+- 중개 오퍼레이션
+- 새로운 Stream을 형성하는 연산
+- 저장된 값을 특정한 형태로 변환하는데 주로 사용, 데이터 타입도 변경
+
 
 ### 3. generate ###
 - 중개 오퍼레이션

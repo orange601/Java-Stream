@@ -102,6 +102,22 @@ public class NumberUtil {
 - 새로운 Stream을 형성하는 연산
 - 저장된 값을 특정한 형태로 변환하는데 주로 사용, 데이터 타입도 변경
 
+````java
+        List<String> alpha = Arrays.asList("a", "b", "c", "d");
+
+        //Before Java8
+        List<String> alphaUpper = new ArrayList<>();
+        for (String s : alpha) {
+            alphaUpper.add(s.toUpperCase());
+        }
+
+        System.out.println(alpha); //[a, b, c, d]
+        System.out.println(alphaUpper); //[A, B, C, D]
+
+        // Java 8
+        List<String> collect = alpha.stream().map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println(collect); //[A, B, C, D]
+````
 
 ### 3. generate ###
 - 중개 오퍼레이션

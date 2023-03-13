@@ -196,6 +196,20 @@ public static void main(String[] args) {
 }
 ````
 
+### 10. FlatMap  ###
+- Map의 경우 이중 for문 해결을 못하는 이슈가 있다. 
+- flatmap은 첫번째 받은 데이터를 다시 stream으로 리턴해서 for를 한번만 수행해도 같은 결과를 얻을 수 있다.
+
+````java
+String[][] data = new String[][]{ {"1", "2"}, {"3", "4"} };
+
+Stream<Stream<String>> map = Arrays.stream(data).map(x -> Arrays.stream(x));
+map.forEach(s -> s.forEach(System.out::println));
+
+Stream<String> flatmap = Arrays.stream(data).flatMap(x -> Arrays.stream(x));
+flatmap.forEach(System.out::println);
+````
+
 
 ## 예제 ##
 ````java

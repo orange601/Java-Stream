@@ -210,6 +210,17 @@ Stream<String> flatmap = Arrays.stream(data).flatMap(x -> Arrays.stream(x));
 flatmap.forEach(System.out::println);
 ````
 
+### 10. Max ###
+
+````java
+List<Integer> intList = Arrays.asList(2, 3, 6, 4, 10, 23);
+Integer maxValue = intList.stream()
+	.mapToInt(x -> x)
+        .max()
+        .orElseThrow(NoSuchElementException::new);
+````
+
+
 
 ## 예제 ##
 ````java

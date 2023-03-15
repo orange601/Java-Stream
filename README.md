@@ -211,6 +211,7 @@ flatmap.forEach(System.out::println);
 ````
 
 ### 10. Max ###
+- 종료 오퍼레이션 (최종연산)
 
 ````java
 List<Integer> intList = Arrays.asList(2, 3, 6, 4, 10, 23);

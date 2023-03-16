@@ -210,7 +210,7 @@ Stream<String> flatmap = Arrays.stream(data).flatMap(x -> Arrays.stream(x));
 flatmap.forEach(System.out::println);
 ````
 
-### 10. Max ###
+### 11. Max ###
 - 종료 오퍼레이션 (최종연산)
 
 ````java
@@ -221,7 +221,20 @@ Integer maxValue = intList.stream()
         .orElseThrow(NoSuchElementException::new);
 ````
 
+### 12. Min ###
+- 종료 오퍼레이션 (최종연산)
 
+````java
+List<Integer> numbers = List.of(4, 0, 5, 2, 7, 1, 8, 6, 9, 3);
+int min = numbers.isEmpty() ? -1 : Collections.min(numbers);
+System.out.println("Min: " + min);
+````
+
+````java
+List<Integer> numbers = List.of(4, 0, 5, 2, 7, 1, 8, 6, 9, 3);
+int max = numbers.stream().max(Integer::compare).orElse(-1);
+System.out.println("Max: " + max); // Max: 9
+````
 
 ## 예제 ##
 ````java

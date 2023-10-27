@@ -236,6 +236,27 @@ int max = numbers.stream().max(Integer::compare).orElse(-1);
 System.out.println("Max: " + max); // Max: 9
 ````
 
+### 13. Collect ###
+- 종료 오퍼레이션 (최종연산)
+
+````
+// given
+createMember(3, createTeam("Korea"));
+createMember(3, createTeam("Japan"));
+
+// when
+Map<String, List<MemberEntity>> actual = memberRepository.findAllWithCountry()
+        .stream()
+        .collect(Collectors.groupingBy(
+                MemberByCountryProjection::getCountry,
+                HashMap::new,
+                Collectors.mapping(MemberByCountryProjection::getMember, Collectors.toList())));
+
+// then
+assertEquals(actual.get("Korea").size(), 3);
+assertEquals(actual.get("Japan").size(), 3);
+````
+
 ## 예제 ##
 ````java
 public class Application {
